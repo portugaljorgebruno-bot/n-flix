@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Remove watermarks completely on all devices */
+a[href*="mocha.app"], 
+iframe[src*="mocha.app"], 
+div[style*="Clone with Mocha"], 
+.lovable-badge,
+[data-testid*="mocha"],
+[class*="mocha"],
+[id*="mocha"] { 
+  display: none !important; 
+  opacity: 0 !important; 
+  visibility: hidden !important; 
+  pointer-events: none !important; 
+  position: absolute !important; 
+  z-index: -9999 !important; 
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Additional mobile-specific removal */
+@media (max-width: 768px) {
+  a[href*="mocha.app"], 
+  iframe[src*="mocha.app"], 
+  div[style*="Clone with Mocha"], 
+  .lovable-badge,
+  [data-testid*="mocha"],
+  [class*="mocha"],
+  [id*="mocha"] { 
+    display: none !important;
+  }
+}
